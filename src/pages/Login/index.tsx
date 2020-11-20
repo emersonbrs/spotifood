@@ -18,20 +18,6 @@ import {
 
 const Login: React.FC = () => {
   const { loginSpotifood } = useAuth();
-  // const txt = [
-  //   { local: 'árabe', food: 'esfirra' },
-  //   { local: 'japonesa', food: 'sushi' },
-  //   { local: 'brasileira', food: 'açai' },
-  // ];
-
-  // const txt2 = ['árabe', 'esfirra'];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log('This will run every second!');
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <Container>

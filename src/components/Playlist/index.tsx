@@ -27,14 +27,9 @@ interface Props {
 }
 
 const Playlist: React.FC<Props> = (props: Props) => {
-  const { locale } = useFilter();
-
   const { data } = props;
 
   const playlistByName = searchByName(props.nameSearch, data);
-  useEffect(() => {
-    console.log('locale', locale);
-  }, []);
 
   return (
     <Container>
