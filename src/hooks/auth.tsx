@@ -79,10 +79,9 @@ export const AuthProvider: React.FC = ({ children }) => {
 
   const loginSpotifood = () => {
     const params = new URLSearchParams();
+    params.append('client_id', CLIENT_ID);
     params.append('response_type', 'token');
     params.append('redirect_uri', REACT_APP_URL);
-    params.append('client_id', CLIENT_ID);
-    params.append('scope', 'user-read-private user-read-email');
 
     window.location.assign(
       `https://accounts.spotify.com/authorize?${params.toString()}`,
