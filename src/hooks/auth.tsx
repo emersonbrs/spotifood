@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { spotifyAccounts, api } from '../services/api';
 
+import { REACT_APP_URL } from '../utils/config';
+
 interface AuthContextData {
   loginSpotifood(): void;
   logoutSpotifood(): void;
@@ -41,7 +43,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const requestToken = async (codeToken: string) => {
       const paramsToken = new URLSearchParams();
       paramsToken.append('grant_type', 'authorization_code');
-      paramsToken.append('redirect_uri', 'http://localhost:3000/dashboard');
+      paramsToken.append('redirect_uri', `${REACT_APP_URL}/dashboard`);
       paramsToken.append('code', codeToken);
 
       const token = await spotifyAccounts.post(
@@ -63,7 +65,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         user: user.data,
       });
 
-      window.location.assign('http://localhost:3000/dashboard');
+      window.location.assign(`${REACT_APP_URL}/dashboard`);
     };
 
     if (code) {
@@ -78,7 +80,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const loginSpotifood = () => {
     const params = new URLSearchParams();
     params.append('response_type', 'code');
-    params.append('redirect_uri', 'http://localhost:3000/dashboard');
+    params.append('redirect_uri', `${REACT_APP_URL}/dashboard`);
     params.append('client_id', 'e24c264306ca449c8c847ed46caad5ad');
     params.append('scope', 'user-read-private user-read-email');
 
@@ -93,7 +95,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     setData({} as IAuthState);
 
-    window.location.assign('http://localhost:3000/');
+    window.location.assign(REACT_APP_URL);
   };
 
   const { user } = data;
