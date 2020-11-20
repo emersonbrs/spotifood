@@ -65,7 +65,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         user: user.data,
       });
 
-      window.location.assign(`${REACT_APP_URL}/dashboard`);
+      window.location.assign(`${REACT_APP_URL}`);
     };
 
     if (code) {
@@ -80,7 +80,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const loginSpotifood = () => {
     const params = new URLSearchParams();
     params.append('response_type', 'code');
-    params.append('redirect_uri', `${REACT_APP_URL}/dashboard`);
+    params.append('redirect_uri', `${REACT_APP_URL}`);
     params.append('client_id', CLIENT_ID);
     params.append('scope', 'user-read-private user-read-email');
 
