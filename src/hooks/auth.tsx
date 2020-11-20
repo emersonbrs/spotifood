@@ -43,7 +43,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const requestToken = async (codeToken: string) => {
       const paramsToken = new URLSearchParams();
       paramsToken.append('grant_type', 'authorization_code');
-      paramsToken.append('redirect_uri', `${REACT_APP_URL}/dashboard`);
+      paramsToken.append('redirect_uri', `${REACT_APP_URL}`);
       paramsToken.append('code', codeToken);
 
       const token = await spotifyAccounts.post(
@@ -65,7 +65,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         user: user.data,
       });
 
-      window.location.assign(`${REACT_APP_URL}/dashboard`);
+      window.location.assign(`${REACT_APP_URL}`);
     };
 
     if (code) {
