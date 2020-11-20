@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { spotifyAccounts, api } from '../services/api';
 
-import { REACT_APP_URL } from '../utils/config';
+import { REACT_APP_URL, CLIENT_ID } from '../utils/config';
 
 interface AuthContextData {
   loginSpotifood(): void;
@@ -81,7 +81,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const params = new URLSearchParams();
     params.append('response_type', 'code');
     params.append('redirect_uri', REACT_APP_URL);
-    params.append('client_id', 'e24c264306ca449c8c847ed46caad5ad');
+    params.append('client_id', CLIENT_ID);
     params.append('scope', 'user-read-private user-read-email');
 
     window.location.assign(
