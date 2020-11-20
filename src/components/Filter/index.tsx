@@ -34,14 +34,12 @@ const Filter: React.FC = () => {
 
     if (number < validation.min || number > validation.max) return;
 
-    // eslint-disable-next-line consistent-return
     return true;
   };
 
   const offsetIsValid = (number: string) => {
     if (Math.sign(Number(number)) !== 1) return;
 
-    // eslint-disable-next-line consistent-return
     return true;
   };
 

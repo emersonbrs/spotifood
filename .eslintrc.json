@@ -37,6 +37,8 @@
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
       "camelcase": "off",
+      "consistent-return": "off",
+      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "no-use-before-define": "off",
