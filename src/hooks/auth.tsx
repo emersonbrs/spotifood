@@ -81,7 +81,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const params = new URLSearchParams();
     params.append('client_id', CLIENT_ID);
     params.append('response_type', 'token');
-    params.append('redirect_uri', `${REACT_APP_URL}/dashboard`);
+    params.append('redirect_uri', `${REACT_APP_URL}`);
 
     window.location.assign(
       `https://accounts.spotify.com/authorize?${params.toString()}`,
