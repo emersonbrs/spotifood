@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import logoSpotify from '../../assets/logoSpotify.png';
 import logoIfood from '../../assets/logoIfood.png';
