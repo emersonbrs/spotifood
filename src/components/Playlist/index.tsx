@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { searchByName } from '../../utils/searchByName';
-import { useFilter } from '../../hooks/filter';
 
 import {
   Container,
