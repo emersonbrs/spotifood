@@ -64,7 +64,6 @@ export const AuthProvider: React.FC = ({ children }) => {
         token: token.data,
         user: user.data,
       });
-      console.log('entrou aq');
 
       window.location.assign(`${REACT_APP_URL}dashboard`);
     };
