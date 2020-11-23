@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const token = localStorage.getItem('@spotifood:token') || '';
 const { access_token } = token ? JSON.parse(token) : { access_token: '' };
-
 export const isAuthenticated = () => access_token;
 
 export const api = axios.create({
