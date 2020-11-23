@@ -47,8 +47,11 @@ const Dashboard: React.FC = () => {
     };
 
     getData();
-  }, [params]);
 
+    setInterval(() => {
+      getData();
+    }, 30000);
+  }, [params]);
   return (
     <>
       <Header />

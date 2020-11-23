@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import logoSpotify from '../../assets/logoSpotify.png';
 
 export const Container = styled.div`
   display: flex;
@@ -77,10 +76,6 @@ export const PlayUl = styled.ul`
   }
 `;
 
-export const PlaylistCardImg = styled.div`
-  display: flex;
-`;
-
 export const PlaylistCardLink = styled.a`
   display: flex;
   align-content: space-between;
@@ -97,11 +92,5 @@ export const PlaylistCardLink = styled.a`
   &:hover {
     top: -10px;
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
-  }
-`;
-
-export const PlaylistCardImage = styled.div`
-  img {
-    display: block;
   }
 `;

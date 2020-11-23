@@ -39,7 +39,6 @@ const Search: React.FC<PropsSearch> = ({ nameSearch }) => {
           onChange={evt => {
             nameSearch(evt.target.value.toLowerCase());
           }}
-          // onChange={() => nameSearch(event.target.value)}
           name="name"
           icon={FiMail}
           placeholder="Qual playlist você quer ouvir?"

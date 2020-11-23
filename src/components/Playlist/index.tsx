@@ -34,22 +34,28 @@ const Playlist: React.FC<Props> = (props: Props) => {
     <Container>
       <PlayUl>
         {playlistByName.map((item: Playlists) => (
-          <PlaylistCard>
-            <PlaylistCardLink href={item.external_urls.spotify}>
-              <li key={item.id}>
-                <img src={item.images[0].url} alt={item.name} />
-                <TitleCard>
-                  <PlaylistTitle>PLAYLIST</PlaylistTitle>
-                  <PlaylistTitleMusic>{item.name}</PlaylistTitleMusic>
-                  <PlaylistNum>
-                    {item.tracks.total}
-                    {'  '}
-                    Músicas
-                  </PlaylistNum>
-                </TitleCard>
-              </li>
-            </PlaylistCardLink>
-          </PlaylistCard>
+          <>
+            {item ? (
+              <PlaylistCard>
+                <PlaylistCardLink href={item.external_urls.spotify}>
+                  <li key={item.id}>
+                    <img src={item.images[0].url} alt={item.name} />
+                    <TitleCard>
+                      <PlaylistTitle>PLAYLIST</PlaylistTitle>
+                      <PlaylistTitleMusic>{item.name}</PlaylistTitleMusic>
+                      <PlaylistNum>
+                        {item.tracks.total}
+                        {'  '}
+                        Músicas
+                      </PlaylistNum>
+                    </TitleCard>
+                  </li>
+                </PlaylistCardLink>
+              </PlaylistCard>
+            ) : (
+              <PlaylistTitle>Oi</PlaylistTitle>
+            )}
+          </>
         ))}
       </PlayUl>
     </Container>

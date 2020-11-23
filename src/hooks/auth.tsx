@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { spotifyAccounts, api } from '../services/api';
 
-import { REACT_APP_URL, CLIENT_ID } from '../utils/config';
+import { REACT_APP_URL, REACT_APP_SPOTIFY_CLIENTE_ID } from '../utils/config';
 
 interface AuthContextData {
   loginSpotifood(): void;
@@ -81,24 +81,13 @@ export const AuthProvider: React.FC = ({ children }) => {
     const params = new URLSearchParams();
     params.append('response_type', 'code');
     params.append('redirect_uri', `${REACT_APP_URL}`);
-    params.append('client_id', CLIENT_ID);
+    params.append('client_id', REACT_APP_SPOTIFY_CLIENTE_ID);
     params.append('scope', 'user-read-private user-read-email');
 
     window.location.assign(
       `https://accounts.spotify.com/authorize?${params.toString()}`,
     );
   };
-
-  // const loginSpotifood = () => {
-  //   const params = new URLSearchParams();
-  //   params.append('client_id', CLIENT_ID);
-  //   params.append('response_type', 'token');
-  //   params.append('redirect_uri', `${REACT_APP_URL}/dashboard`);
-
-  //   window.location.assign(
-  //     `https://accounts.spotify.com/authorize?${params.toString()}`,
-  //   );
-  // };
 
   const logoutSpotifood = () => {
     localStorage.removeItem('@spotifood:token');

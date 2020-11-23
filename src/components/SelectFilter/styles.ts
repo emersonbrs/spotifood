@@ -9,15 +9,12 @@ export const Container = styled.div`
   justify-content: center;
 
   select {
-    border: 2px solid green;
+    border: 2px solid #696969;
     padding: 10px;
     outline: none;
-    color: #d2d2d2;
+    color: #696969;
     font-size: 20px;
     width: 100%;
     border-radius: 5px;
-    &::placeholder {
-      color: inherit;
-    }
   }
 `;

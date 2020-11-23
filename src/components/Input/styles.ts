@@ -24,17 +24,3 @@ export const Container = styled.div`
     }
   }
 `;
-
-// export const Error = styled(Tooltip)`
-//   height: 20px;
-//   svg {
-//     margin: 0px;
-//   }
-//   span {
-//     background: #c53030;
-//     color: #fff;
-//     &::before {
-//       border-color: #c53030 transparent;
-//     }
-//   }
-// `;

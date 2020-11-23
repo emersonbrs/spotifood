@@ -31,7 +31,3 @@ export const BtnLogout = styled.button`
     color: #fff;
   }
 `;
-
-export const LogoSpotify = styled.img`
-  width: 10%;
-`;
