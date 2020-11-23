@@ -12,9 +12,9 @@ const Routes: React.FC = () => (
   <Switch>
     <AuthProvider>
       {isAuthenticated() ? (
-        <Route component={Login} />
+        <Route path="/" exact component={Login} />
       ) : (
-        <Route component={Dashboard} />
+        <Route path="/dashboard" component={Dashboard} isPrivate />
       )}
     </AuthProvider>
 
