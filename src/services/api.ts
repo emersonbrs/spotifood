@@ -4,6 +4,8 @@ const token = localStorage.getItem('@spotifood:token') || '';
 const { access_token } = token ? JSON.parse(token) : { access_token: '' };
 export const isAuthenticated = () => access_token;
 
+console.log(isAuthenticated);
+
 export const api = axios.create({
   baseURL: 'https://api.spotify.com/v1/',
   headers: {
