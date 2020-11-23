@@ -15,6 +15,7 @@ export const apiMocky = axios.create({
   headers: {
     Origin: 'https://spotify-test-brs.netlify.app',
   },
+  withCredentials: true,
 });
 
 export const spotifyAccounts = axios.create({
